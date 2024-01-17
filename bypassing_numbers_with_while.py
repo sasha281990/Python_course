@@ -1,45 +1,54 @@
-# number = 73408
-# m = 0
-# s = 0
-# while number > 0:
-#     last_digit = number % 10
-#     s = s + last_digit
-#     if last_digit > m:
-#         m = last_digit
-#     number = number // 10
-# print(s + m)
-#
-# a, b = map(int, input().split())  # Ввод чисел
-# a1, b1 = a, b                     # для НОК
-#
-# while b > 0:
-#     a, b = b, a % b
-# print(f'НОД - {a}')
-# print(f'НОК - {a1 * b1 / a}')      # На всякий случай: Произведение(умножить) вводимых чисел делим на НОД
-# i = 0
-# while i < 5:
-#     if i == 3:
-#         break
-#     print(i)
-#     i += 1
-# else:
-#     print("Конец")
+# Программа принимает на вход одно натуральное число и выводит его цифры в столбик в обратном порядке.
+a = int(input())
+while a > 0:
+    print(a % 10)
+    a = a // 10
 
-# for i in range(13):
-#     print("Надо было брать биткоин в 2012!")
+# Программа принимает на вход одно натуральное число и выводит на экран сумму цифр данного числа
+n = int(input())
+s = 0
+while n > 0:
+    s = s + n % 10
+    n = n//10
+print(s)
 
-# Напишите программу, которая найдет сумму кубов натуральных чисел от 50 до 100 включительно
-# 503 + 513 + 523 + 533 + ... + 1003
+# Программа принимает на вход одно натуральное число и выводит на экран произведение цифр данного числа
+n = int(input())
+product = 1
+while n > 0:
+    last = n % 10
+    product = product * last
+    n = n//10
+print(product)
 
-# a = 0
-# for i in range(50, 101):
-#     a = a + (i ** 3)
-# print(a)
-#
-n = int(input("Enter a number: "))
-factorial = 1
+# Программа принимает на вход одно натуральное число и выводит на экран минимальную и
+# максимальную цифры данного числа в отдельных строчках
+n = int(input())
+maximum = 0
+minimum = 9
+while n > 0:
+    last = n % 10
+    if last > maximum:
+        maximum = last
+    if last < minimum:
+        minimum = last
+    n = n//10
+print(minimum)
+print(maximum)
 
-for i in range(1, n + 1):
-    factorial *= i
+# Программа принимает на вход одно натуральное число. Ваша задачи найти сколько раз встречается цифра 7 в этом числе
+a = int(input())
+count = 0
+while a > 0:
+    b = a % 10
+    if b == 7:
+        count += 1
+    a = a // 10
+print(count)
 
-print("The factorial of", n, "is", factorial)
+# Программа принимает на вход одно натуральное число и выводит его цифры в двоичной системе в
+# столбик в обратном порядке.
+n = int(input())
+while n > 0:
+    print(n % 2)
+    n = n // 2
